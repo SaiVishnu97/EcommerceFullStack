@@ -1,0 +1,20 @@
+.eachitem-container
+{
+    grid-area: Itemsouter;
+    display: flex;
+    width: 100%;
+}
+.imgcontainer
+{
+    width: 500px;
+    height: 500px;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    padding: 30px;
+}
+.desccontainer
+{
+    font-size: x-large;
+    width: fit-content;
+    padding: 30px;
+}
