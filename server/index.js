@@ -31,6 +31,9 @@ app.post('/payments', async (req, res) => {
         payment_method_types:["card"],
         line_items:lineItems,
         mode:"payment",
+        shipping_address_collection: {
+            allowed_countries: ['US', 'CA','IN'], // Specify the countries where shipping is allowed
+        },
         success_url:`${process.env.FRONTEND_URL}/success`,
         cancel_url:`${process.env.FRONTEND_URL}/cancel`,
     });
