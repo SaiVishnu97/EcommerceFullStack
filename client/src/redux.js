@@ -114,7 +114,15 @@ const getAllProducts=()=>
 {
     return dispatch=>
     {
-        Axios.get("https://fakestoreapi.com/products").then(output=>dispatch(addProducts(output.data)))
+        Axios.get("https://fakestoreapi.com/products").then(output=>
+        {
+            const prodarray=output.data.map((val)=>
+            {
+                return {...val,price:Math.floor(val.price*85)}
+            })
+            dispatch(addProducts(prodarray))
+            
+        })
     }
 }
 

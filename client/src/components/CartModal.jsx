@@ -4,6 +4,7 @@ import { addProductsToCart,removeProductsFromCart } from '../redux'
 import { DisplayPlusAndMinus } from './Shoppingbody';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import PaymentReact from './PaymentReact';
 
 function CartModal(props) {
  
@@ -45,16 +46,16 @@ function CartModal(props) {
           <Modal.Title>Cart Items</Modal.Title>
         </Modal.Header>
         <Modal.Body style={{ overflowY: 'auto' }}>
-        {cartproducts.length===0?`Your cart is empty`:cartproducts.map((val,index)=>
+        {cartproducts.length===0?`Your cart is empty`:cartproducts.map((val)=>
       {
         return <div className="card" style={{fontSize: "10px",}}>
         <h6>{val.id}</h6>
         <img id="images" className="card-img-top" style={{height:"150px"}}src={val.image} alt="Card image cap" />
         <div className="card-body">
           <h5 className="card-title" style={{fontSize: "10px", fontWeight: 700}}>{val.title.substring(0, 20)}</h5>
-          <h6 style={{fontWeight: 800}}>INR.{Math.floor(val.price * 85)}</h6>
+          <h6 style={{fontWeight: 800}}>INR.{val.price}</h6>
           <p className="card-text">{val.description.substring(0, 80)}</p>
-          <h6 style={{fontWeight: 800}}>Total Price:-INR.{Math.floor(val.count*val.price * 85)}</h6>
+          <h6 style={{fontWeight: 800}}>Total Price:-INR.{val.price*val.count}</h6>
           <br></br>
           <DisplayPlusAndMinus cartprod={{val,cartproducts}} addToTheCart={addToTheCart} removeFromCart={removeFromCart}/>
         </div>
@@ -66,6 +67,7 @@ function CartModal(props) {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
+          <PaymentReact></PaymentReact>
         </Modal.Footer>
       </Modal>
     </div>

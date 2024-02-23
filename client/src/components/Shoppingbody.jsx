@@ -63,7 +63,7 @@ function Shoppingbody() {
           <img id="images" className="card-img-top" style={{height:"150px"}} src={val.image} alt="Card image cap" />
           <div className="card-body">
             <h5 className="card-title" style={{fontSize: "10px", fontWeight: 700}}>{val.title.substring(0, 20)}</h5>
-            <h6 style={{fontWeight: 800}}>INR.{Math.floor(val.price * 85)}</h6>
+            <h6 style={{fontWeight: 800}}>INR.{val.price}</h6>
             <p className="card-text">{val.description.substring(0, 80)}</p>
             <button className="btn btn-primary cartevent" style={{fontSize: "15px",}} onClick={function(event)
             {
@@ -87,7 +87,7 @@ function Shoppingbody() {
         <img id="images" className="card-img-top" style={{height:"150px"}} src={val.image} alt="Card image cap" />
         <div className="card-body">
           <h5 className="card-title" style={{fontSize: "10px", fontWeight: 700}}>{val.title.substring(0, 20)}</h5>
-          <h6 style={{fontWeight: 800}}>INR.{Math.floor(val.price * 85)}</h6>
+          <h6 style={{fontWeight: 800}}>INR.{val.price}</h6>
           <p className="card-text">{val.description.substring(0, 80)}</p>
           <button className="btn btn-primary cartevent" style={{fontSize: "15px",}} onClick={function(event)
           {

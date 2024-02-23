@@ -41,7 +41,6 @@ const EachItem = () => {
     function checkincart(prod)
     {
       let res=cartproducts.some((val)=>val.id===prod)
-      console.log(res)
       return res;
     }
   if(item.id)
@@ -53,7 +52,7 @@ const EachItem = () => {
         </div>
         <div className="desccontainer">
           <h2 className="card-title" style={{ fontWeight: 700}}>{item.title.substring(0, 20)}</h2>
-          <h3 style={{fontWeight: 800, color: 'blue'}}>INR.{Math.floor(item.price * 85)}</h3>
+          <h3 style={{fontWeight: 800, color: 'blue'}}>INR.{item.price}</h3>
           <p >{item.description}</p>
           <button className="btn btn-primary" style={{fontSize: "15px",}} onClick={function()
           {
