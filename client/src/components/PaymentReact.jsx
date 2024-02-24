@@ -16,7 +16,7 @@ const PaymentReact = () => {
         const headers = {
             "Content-Type":"application/json"
         }
-        const response = await fetch(`${REACT_APP_BACKEND_URL}/payments`,{
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/payments`,{
             method:"POST",
             headers:headers,
             body:JSON.stringify(body)
