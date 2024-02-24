@@ -1,20 +1,12 @@
 import React from 'react'
-import StripeCheckout from 'react-stripe-checkout';
 import { useSelector } from 'react-redux';
 import {loadStripe} from '@stripe/stripe-js';
 
 const PaymentReact = () => {
 
     const cartproducts=useSelector((output)=>{return output.product.cart;})
-    const [totalbill,setTotalBill]=React.useState(0);
    
-    const calculateBill=(event)=>
-    {
-        event.preventDefault();
-        const amount=cartproducts.reduce((acc,val)=>val.price*val.count+acc,0);
-        console.log(amount);
-        setTotalBill(amount);
-    }
+   
     const makePayment = async()=>{
         const stripe = await loadStripe(process.env.REACT_APP_STRIPE_PUBLISH_KEY);
 
@@ -24,7 +16,7 @@ const PaymentReact = () => {
         const headers = {
             "Content-Type":"application/json"
         }
-        const response = await fetch("http://localhost:3001/payments",{
+        const response = await fetch(`${REACT_APP_BACKEND_URL}/payments`,{
             method:"POST",
             headers:headers,
             body:JSON.stringify(body)
