@@ -1,0 +1,54 @@
+/* .sidebar {
+  width: 0;
+  overflow: hidden;
+  transition: width 0.3s ease-in-out;
+  height: 50px;
+} */
+
+/* .sidebar.open {
+  
+  width: 200px;
+  height: 100vh;
+  background-color: #96BDF9;
+
+} */
+
+.hamburger {
+  font-size: 20px;
+  color: rgb(15, 15, 15);
+  align-self: flex-start;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.hamburger:hover {
+  color: #dce7fb; /* Thicker color on hover */
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+li {
+  margin-bottom: 10px; /* Adjust the margin between list items */
+}
+
+a {
+  text-decoration: none;
+  color: rgb(15, 14, 14);
+  padding: 10px;
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+  display: block;
+}
+
+a:hover {
+  background-color: #779ed1; /* Thicker background on hover */
+}
+
+li a.active {
+  background-color: #5477a4; /* Thicker background for the active link */
+}

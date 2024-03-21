@@ -1,0 +1,38 @@
+.mainContainer
+{
+    margin: 10%;
+}
+.cardLogin {
+    width: 300px;
+    margin-left: 30%;
+    margin-top: 10%;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* box shadow in all directions */
+    border-radius: 8px;
+    background-color: #fff;
+  }
+
+  .cardLogin h2 {
+    color: #333;
+  }
+
+  .cardLogin p {
+    color: #666;
+  }
+  .line {
+    border-top: 1px solid #2b2b2b;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .line span {
+    background-color: #fff;
+    padding: 0 10px;
+    font-weight: 600;
+  }
+  .card img {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
