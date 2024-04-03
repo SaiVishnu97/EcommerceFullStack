@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector,useDispatch } from 'react-redux'
 import CartModal from './CartModal'
 import { useState } from 'react'
-import { searchMatchedItems } from '../redux'
+import { searchMatchedItems,logOutState } from '../redux'
 import { Link, useNavigate,useSearchParams } from 'react-router-dom'
 
 function Navbar() {
@@ -57,6 +57,7 @@ function Navbar() {
     <div>
     <a className="nav-link" onClick={()=>{
       localStorage.removeItem('UserName');
+      dispatch(logOutState());
       navigate('/');
       }} style={{color:'whitesmoke'}} >Log out</a>
     </div>

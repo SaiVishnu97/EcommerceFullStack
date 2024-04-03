@@ -1,6 +1,5 @@
 import React from 'react'
 import Navbar from './Navbar';
-import Shoppingbody from './Shoppingbody';
 import Sidebar from './SideBar';
 import { Outlet } from 'react-router-dom';
 function Shoppingmain() {

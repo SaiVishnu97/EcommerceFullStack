@@ -16,6 +16,7 @@ const PaymentReact = () => {
         const headers = {
             "Content-Type":"application/json"
         }
+        console.log(process.env.REACT_APP_BACKEND_URL);
         const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/payments`,{
             method:"POST",
             headers:headers,

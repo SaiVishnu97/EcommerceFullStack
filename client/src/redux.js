@@ -1,7 +1,15 @@
 import { createStore,combineReducers,applyMiddleware } from "redux";
 import { thunk } from "redux-thunk";
 import Axios from "axios";
-
+import { persistStore, persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
+ 
+const persistConfig = {
+    key: 'root',
+    storage,
+  }
+   
+   
 const initialState={
     products:[],
     cart:[],
@@ -19,7 +27,12 @@ export const searchMatchedItems=(data)=>{
         payload:data,
     }
 }
-
+export const logOutState=()=>
+{
+    return{
+        type: 'LOG_OUT'
+    }
+}
 export const addProductsToCart=(data,count)=>
 {
     return{
@@ -95,7 +108,12 @@ const addProductsReducers=(state=initialState,action)=>
                 ...state,
                 matcheditems:matcheditemsarr
             }
-
+        case 'LOG_OUT':
+            return {
+                ...state,
+                cart:[],
+                matcheditems:[]
+            };
         default:
             return state
     }
@@ -107,8 +125,9 @@ const rootReducer=combineReducers({
 })
 
 
-
-export const productstore=createStore(rootReducer,applyMiddleware(thunk));
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+export const productstore=createStore(persistedReducer,applyMiddleware(thunk));
+export let persistor = persistStore(productstore);
 
 const getAllProducts=()=>
 {

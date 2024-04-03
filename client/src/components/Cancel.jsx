@@ -7,6 +7,7 @@ const Cancel = () => {
     const navigate=useNavigate();
     React.useEffect(()=>{
        intervalref.current=setInterval(()=>setCount(prevCount => {
+        console.log(count);
         if (prevCount === 1) {
             clearInterval(intervalref.current);
             navigate('/shoppingmain');
